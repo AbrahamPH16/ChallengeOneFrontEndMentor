@@ -1,0 +1,232 @@
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height: 100vh;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    background-color: rgb(236, 242, 248);
+    position: relative;
+}
+
+.image{
+    width:320px;
+    height:300px;
+    overflow: hidden;
+    border-top-left-radius: 5%;
+    border-bottom-left-radius: 5%;
+}
+.image img{
+    height: 300px;
+    width: 400px;
+    transition: all 1s ease;
+}
+.contents {
+  height: 300px;
+  width: 400px;
+  background: white;
+  padding-left: 15px;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+
+
+h2{
+    display: inline-block;
+    font-weight: 700;
+    color: hsl(217, 19%, 35%) ;
+    margin-top: 30px;
+}
+
+.description{
+    display: inline-block;
+    font-weight: 500;
+    color: hsl(214, 17%, 51%);
+}
+
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius:150px;
+    float: left;
+    margin-right: 20px;
+}
+.profile{
+    display: flex;
+    justify-content: space-between;
+    width: 490px;
+}
+.profile-avatar{
+    font-weight: 700;
+    color: hsl(217, 19%, 35%) ;
+}
+
+.date{
+    font-weight: 500px;
+    color: hsl(214, 17%, 51%);
+}
+
+.toolTip{
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    border-radius: 150px;
+    background-color: hsl(210, 46%, 95%);
+    color: hsl(214, 17%, 51%);
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+    text-align: center;
+}
+
+.icon{
+    display: flex;
+    align-items: center;
+}
+.tooltiptext ul{
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.tooltiptext ul li {
+   font-size: 15px;
+}
+.toolTip .tooltiptext {
+    visibility: hidden;
+    width: 130px;
+    background-color: hsl(217, 19%, 35%);
+    color: #fff;
+    text-align: center;
+    font: caption;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 1%;
+    margin-left: -65px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+.toolTip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+ }
+  
+.toolTip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
+  .share{
+      display: none;
+  }
+
+  .buttonShare{
+      display: none;
+  }
+
+
+  @media screen and (max-width: 701px) {
+    body {
+      font-size: 14px;
+      flex-wrap: wrap;
+      align-content: center;
+  
+    }
+  
+     .image {
+      height: 200px;
+      width: 350px;
+      border-top-right-radius: 5%;
+      border-bottom-left-radius: 0;
+    }
+  
+    .image img {
+      height: 280px;
+      width: 350px;
+    }
+  
+   .contents {
+      height: 350px;
+      width: 350px;
+      padding: 0;
+      border-bottom-left-radius: 5%;
+      border-top-right-radius: 0;
+      overflow: hidden;
+    }
+  
+    .contents h2 {
+      margin-bottom: 0;
+      font-weight: 600;
+      padding: 25px 25px 0;
+      font-size: 17px;
+    }
+  
+    .contents p {
+      font-weight: 400;
+      padding: 0 25px;
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+  
+    .description {
+      margin-bottom: 40px;
+      padding: 0 25px;
+      margin-bottom: 0;
+    }
+
+    .profile{
+        margin-top: 10px;
+        width: 360px;
+        float: left;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    .toolTip{
+        display: none;
+    }
+
+    .buttonShare{
+        display: initial;
+        width: 30px;
+        height: 30px;
+        border-radius: 200px;
+        background-color: hsl(210, 46%, 95%);
+        color: hsl(217, 19%, 35%);
+    }
+    .share.is-active{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        background:hsl(217, 19%, 35%);
+        transition: .3s;
+        z-index: 2;
+    }
+    .share.is-active ul{
+        list-style: none;
+        display: flex;
+        color: white;
+        justify-content: space-around;
+        align-items: center;
+        align-content: center;
+        padding:0;
+        font-size: 20px;
+    }
+
+  
+}

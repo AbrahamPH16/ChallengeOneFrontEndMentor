@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/icons.css">
+  
+  <title>Frontend Mentor | Article preview component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center;  }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+  <div class="image">
+    <img src="images/drawers.jpg" alt="drawer image">
+  </div>
+ 
+  <div class="contents">
+
+
+    <h2>Shift the overall look and feel by <br> 
+      adding these wonderful touches to <br>
+      furniture in your home</h2>
+    
+    <p class="description">Ever been in a room and felt like something was missing? <br>
+      Perhaps it felt slightly bare and uninviting. I’ve got some<br>
+       simple tips to help you make any room feel complete.
+    </p>
+    <div class="profile">
+      <div class="share">
+        <ul>
+          <li>SHARE</li>
+          <li><area class="icon-twitter" href="https://twitter.com/AbrahamPH16" target=”_blank”><area></li>
+          <li><area class="icon-github" href="https://github.com/AbrahamPH16" target=”_blank”></area></li>
+          <li><area class="icon-instagram" href="https://www.instagram.com/abraham_ph16/?hl=es-la" target=”_blank”></area></li>
+          <li> <button class="icon-share buttonShare" id="shareReturn"></button> </li>
+        </ul>
+      </div>
+      <div>
+      <p>
+        <img src="images/avatar-michelle.jpg" alt="avatar" class="avatar">
+        <span class="profile-avatar">Michelle Appleton</span>
+        <br>
+        <span class="date">28 Jun 2020</span>
+      </div>  
+        <div class="icon">
+          <button class="icon-share buttonShare" id="share"></button>
+          <a class=" icon-share toolTip">
+            <span class="tooltiptext">
+              <ul>
+                <li>SHARE</li>
+                <li><area class="icon-twitter" href="https://twitter.com/AbrahamPH16" target=”_blank”><area></li>
+                <li><area class="icon-github" href="https://github.com/AbrahamPH16" target=”_blank”></area></li>
+                <li><area class="icon-instagram" href="https://www.instagram.com/abraham_ph16/?hl=es-la" target=”_blank”></area></li>
+              </ul>
+              
+            </span>
+          </a>
+        </div>
+      </p>
+
+    </div>
+  </div> 
+  <script>
+    const ipad = window.matchMedia('screen and (max-width: 701px)');
+    const share = document.querySelector('#share');
+    const shareReturn = document.querySelector('#shareReturn');
+    const shareTemplate = document.querySelector('.share');
+    ipad.addListener(validation);
+    function validation(event) {
+      if(event.matches){
+        share.addEventListener('click',hideShow);
+        shareReturn.addEventListener('click',hideShow);
+      }else{
+        share.addEventListener('click',hideShow);
+        shareReturn.addEventListener('click',hideShow);
+      }
+    }
+    validation(ipad);
+    validation(hideShow);
+    function hideShow(){
+      if(shareTemplate.classList.contains('is-active')){
+          shareTemplate.classList.remove('is-active');
+          shareTemplate.style.cssText = 'display: none';
+      }else{
+        shareTemplate.classList.add('is-active');
+        shareTemplate.style.cssText = 'display: initial;';
+        shareReturn.style.cssText = 'background-color: hsl(217, 19%, 35%); color: hsl(210, 46%, 95%);';
+      }
+         
+    }
+  </script>
+  
+  
+</body>
+</html>
